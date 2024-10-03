@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4%;
+}
+
+.logo{
+    width: max(10%,80px);
+}
+.main-logo{
+    color: #a1362e;
+}
+
+.navbar .profile{
+    width: 40px;
+}
