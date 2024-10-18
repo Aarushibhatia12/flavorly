@@ -24,7 +24,7 @@ const loginUser = async(req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.json({success:false,message:"Error"})
+        res.json({success:false,message:"Error"});
     }
 }
 
@@ -59,7 +59,7 @@ const registerUser = async(req, res) => {
         const newUser = new userModel({
             name:name,
             email:email,
-            passwordhashedPassword
+            password: hashedPassword
         })
 
         const user = await newUser.save()
