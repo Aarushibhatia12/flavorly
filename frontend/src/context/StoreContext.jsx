@@ -19,8 +19,18 @@ const StoreContextProvider = (props) => {
 
      
     const removeFromCart = (itemId) => {
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
-    }
+      setCartItems((prev) => {
+          if (prev[itemId] === 1) {
+              // Remove the item if count reaches 0
+              const { [itemId]: _, ...rest } = prev;
+              return rest;
+          } else {
+              // Otherwise, just decrement the count
+              return { ...prev, [itemId]: prev[itemId] - 1 };
+          }
+      });
+  }
+  
 
    const getTotalCartAmount = () => {
     let totalAmount = 0;
